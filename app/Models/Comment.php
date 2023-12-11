@@ -12,12 +12,16 @@ class Comment extends Model
 
     protected $fillable = [
         'post_id',
-        'title',
-        'message',
+        'content',
     ];
 
-    public function posts(): BelongsTo
+    public function post(): BelongsTo
     {
         return $this->belongsTo(Post::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

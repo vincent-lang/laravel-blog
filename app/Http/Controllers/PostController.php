@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index()
     {
-        return view('posts.index', ['posts' => Post::with('user')->latest()->get(),]);
+        return view('posts.index', ['posts' => Post::with('user')->latest()->get(), 'comments' => Comment::with('post')->get(), 'users' => User::all()]);
     }
 
     public function store(Request $request)

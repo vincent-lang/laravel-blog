@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,8 @@ Route::get('/posts/{posts}/edit', [PostController::class, 'edit'])->name('posts.
 Route::put('/posts/{posts}/update', [PostController::class, 'update'])->name('posts.update');
 
 Route::get('/posts/{posts}/delete', [PostController::class, 'delete'])->name('posts.delete');
+
+Route::post('/comments/{post}/store', [CommentController::class, 'store'])->name('comments.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
