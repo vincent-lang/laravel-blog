@@ -1,17 +1,17 @@
 <x-app-layout>
     <aside class="sticky top-20">
-        <div class="absolute mt-20 ml-32 bg-gray-400 p-5 rounded-lg text-blue-600 overflow-x-auto max-h-80">
-            <div class="text-black font-bold pb-4">
+        <div class="absolute mt-20 ml-32 bg-gray-800 p-5 rounded-lg text-blue-600 overflow-x-auto max-h-80">
+            <div class="text-white font-bold pb-4">
                 <div class="mb-4">
                     <h1>side menu:</h1>
                 </div>
             </div>
-            <div class="text-blue-600 font-normal hover:bg-gray-500 p-0.5 rounded-lg">
+            <div class="font-normal hover:bg-gray-900 p-0.5 rounded-lg">
                 <a href="#top">back to the top</a>
             </div>
             <div>
                 @foreach($posts as $post)
-                <div class="flex-row hover:bg-gray-500 rounded-lg p-1 overflow-x-auto">
+                <div class="flex-row hover:bg-gray-900 rounded-lg p-1 overflow-x-auto">
                     <a href="#{{$post->id}}">{{$post->title}}</a>
                 </div>
                 @endforeach
